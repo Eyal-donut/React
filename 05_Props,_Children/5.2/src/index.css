@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Project app specific css */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 1px 8px rgb(0,0,0,.25);
+  margin: 10px;
+  background: rgb(0,0,0,.25);
+  height: 400px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.links-container {
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  margin: 5px;
+  
+}
+a:visited {
+  color: inherit;
+}
+
+
+.image1 {
+  background: url(https://images.pexels.com/photos/3844788/pexels-photo-3844788.jpeg) no-repeat center center/cover;
+  width: 200px;
+  height: 500px;
+  
+}
+.image2 {
+  background: url(https://images.pexels.com/photos/4226881/pexels-photo-4226881.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat center center/cover;
+  width: 200px;
+  height: 500px;
+}
+.image3 {
+  background: url(https://images.pexels.com/photos/4016579/pexels-photo-4016579.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat center center/cover;
+  width: 200px;
+  height: 500px;
+}
+
