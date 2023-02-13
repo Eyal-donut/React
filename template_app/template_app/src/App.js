@@ -1,90 +1,55 @@
-import Card from "./components/Card";
 import Wrapper from "./components/Helpers/Wrapper";
-import Image from "./components/Image";
-import Link from "./components/Link";
-import LinksContainer from "./components/LinksContainer";
 import Title from "./components/Title";
-import Description from "./components/Description";
-
+import Child from "./components/Child";
+import ChildrenContainer from "./components/childrenContainer";
 
 function App() {
-  const card1 = {
-    image: "image1",
-    title: "title1",
-    description: "description1",
-    links: [
-      {linkText:"SHARE", linkUrl: "https://www.google.com/"},
-      {linkText:"EXPLORE", linkUrl: "https://www.google.com/"},
-    ],
+  const ori = {
+    childName: "Ori",
+    balloonColor: "red"
   }
-  const card2 = {
-    image: "image2",
-    title: "title2",
-    description: "description2",
-    links: [
-      {linkText:"EAT", linkUrl: "https://www.google.com/"},
-      {linkText:"DRINK", linkUrl: "https://www.google.com/"},
-    ],
+  const ron = {
+    childName: "Ron",
+    balloonColor: "blue"
   }
-  const card3 = {
-    image: "image3",
-    title: "title3",
-    description: "description3",
-    links: [
-      {linkText:"DOG", linkUrl: "https://www.google.com/"},
-      {linkText:"CAT", linkUrl: "https://www.google.com/"},
-    ],
+  const sigalit = {
+    childName: "Sigalit",
+    balloonColor: "green"
+  }
+  const ruti = {
+    childName: "Ruti",
+    balloonColor: "yellow"
+  }
+  const alon = {
+    childName: "Alon",
+    balloonColor: "purple"
   }
 
   return (
     <Wrapper>
-      <Card>
-        <Image image = {card1.image}/>
-        <Title title={card1.title}/>
-        <Description description={card1.description}/>
-        <LinksContainer>
-          <Link 
-          linkText='hi'
-          linkUrl='https://www.google.com/'
-          />
-          <Link 
-          linkText={card1.links[1].linkText}
-          linkUrl={card1.links[1].linkUrl}
-          />
-        </LinksContainer>
-      </Card>
-      <Card>
-        <Image image = {card2.image}></Image>
-        <Title title={card2.title}/>
-        <Description description={card2.description}/>
-        <LinksContainer>
-          <Link
-          linkText={card2.links[0].linkText}
-          linkUrl={card2.links[0].linkUrl}
-          />
-          <Link 
-          linkText={card2.links[1].linkText}
-          linkUrl={card2.links[1].linkUrl}
-          />
-        </LinksContainer>
-
-      </Card>
-      <Card>
-        <Image image = {card3.image}></Image>
-        <Title title={card3.title}/>
-        <Description description={card3.description}/>
-        <LinksContainer>
-          <Link 
-          linkText={card3.links[0].linkText}
-          linkUrl={card3.links[0].linkUrl}
-          />
-          <Link
-          linkText={card3.links[1].linkText}
-          linkUrl={card3.links[1].linkUrl}
-          />
-        </LinksContainer>
-
-      </Card>
+      <Title/>
+      <ChildrenContainer>
+        <Child 
+        childName={ori.childName}
+        balloonColor={ori.balloonColor} 
+        />
+        <Child 
+        childName={ron.childName}
+        balloonColor={ron.balloonColor} 
+        />
+        <Child 
+        childName={sigalit.childName}
+        balloonColor={sigalit.balloonColor} 
+        />
+        <Child 
+        childName={ruti.childName}
+        balloonColor={ruti.balloonColor} 
+        />
+        <Child 
+        childName={alon.childName}
+        balloonColor={alon.balloonColor} 
+        />
+      </ChildrenContainer>
       
     </Wrapper>
   )
