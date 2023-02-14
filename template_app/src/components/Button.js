@@ -2,11 +2,11 @@ import Wrapper from "./Helpers/Wrapper";
 // import React, { useState } from "react";
 
 const Button = ({ text }) => {
-  // const [color, setColor] = useState();
+  const [color, setColor] = useState();
 
-  // const handleClick = () => {
-  //   setColor();
-  // };
+  const handleClick = () => {
+    setColor();
+  };
 
   return (
       <button>{text}</button>

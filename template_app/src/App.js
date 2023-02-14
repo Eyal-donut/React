@@ -6,9 +6,9 @@ function App() {
   
   return (
     <Wrapper>
-      {colors.map((color) => {
-        return <Button text= {color}/>
-      })}
+      {colors.map((color) => 
+        <Button text= {color}/>
+      )}
     </Wrapper>
   );
 }
