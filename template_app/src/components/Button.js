@@ -1,19 +1,15 @@
 import Wrapper from "./Helpers/Wrapper";
-import React, { useState } from "react";
-import Counter from "./Counter";
+// import React, { useState } from "react";
 
 const Button = ({ text }) => {
-  const [count, setCount] = useState(0);
+  // const [color, setColor] = useState();
 
-  const handleClick = () => {
-    setCount((prevCount) => prevCount + 1);
-  };
+  // const handleClick = () => {
+  //   setColor();
+  // };
 
   return (
-    <Wrapper>
-      <button onClick={handleClick}>{text}</button>
-      <Counter num={count} />
-    </Wrapper>
+      <button>{text}</button>
   );
 };
 export default Button;
