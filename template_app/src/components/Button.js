@@ -1,15 +1,9 @@
-import Wrapper from "./Helpers/Wrapper";
-// import React, { useState } from "react";
 
-const Button = ({ text }) => {
-  const [color, setColor] = useState();
-
-  const handleClick = () => {
-    setColor();
-  };
+const Button = ({colorName, parentFunc}) => {
 
   return (
-      <button>{text}</button>
+      <button onClick = {() => parentFunc(colorName)} className = {colorName}>{colorName}</button>
+      
   );
 };
 export default Button;
