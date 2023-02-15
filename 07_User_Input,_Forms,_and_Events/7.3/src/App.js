@@ -1,38 +1,16 @@
-import Wrapper from "./components/Helpers/Wrapper";
-import Checkbox from "./components/checkbox";
-
+import Form from "./components/Form";
 
 function App() {
-  const checkboxesArray = [
-    {id: 1,
-    text: 
-    "Sure you can sell my data",
-    state: true
-    },
 
-    {id: 2,
-    text: 
-    "You can also spy on me",
-    state: false
-    },
-
-    {id: 3,
-    text: 
-    "I don't really read that stuff",
-    state: true
-    },
-
-    {id: 3,
-    text: 
-    "I declare I love dogs",
-    state: false
-    },
-  ]
-
+  const detailsHandler = (filledDetails) => {
+    const filledDetails2 = {
+      ...filledDetails
+    }
+    console.log("here I can do sth with the saved details", filledDetails2)
+  }
+  
   return (
-    <Wrapper>
-    {checkboxesArray.map((item) => <Checkbox {...item}/>)}
-      </Wrapper>
+    <Form onSavedDetails = {detailsHandler}/>
   );
 }
 export default App;
