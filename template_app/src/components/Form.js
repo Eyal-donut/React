@@ -42,6 +42,7 @@ const Form = ({onSavedDetails}) => {
             textArea: textArea,
         }
         console.log("num1",filledDetails)
+        
         onSavedDetails(filledDetails)
 
         setFirstName('')
