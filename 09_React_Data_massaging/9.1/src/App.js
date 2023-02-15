@@ -27,7 +27,6 @@ console.log(allBefore1990)
       favMeats={(person.favoriteFoods.meats).join(", ")}
         />)}
   </>
-    
 
   )
 }
