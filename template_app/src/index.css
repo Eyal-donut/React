@@ -13,44 +13,12 @@ code {
 }
 
 /* Project app specific css */
-body {
+#root {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background: rgb(188, 188, 213);
 }
 
-.box-one {
-  width: 50vw;
-  height: 30vw;
-  background:  rgb(94, 161, 94);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.box-two {
-  width: 45vw;
-  height: 25vw;
-  background:  rgb(69, 125, 208);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.box-three {
-  width: 40vw;
-  height: 20vw;
-  background:  pink;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
 
-.box-four {
-  background: rgb(127, 72, 127);
-  width: 20vw;
-  height: 5vh;
-  margin: 1vh 0;
-}
