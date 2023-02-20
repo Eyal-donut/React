@@ -1,0 +1,45 @@
+/* Project app specific css */
+#root {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.box1 {
+  width: 100px;
+  height: 100px;
+  background: coral;
+  position: absolute;
+  left: 0;
+  animation: moveRight 2s forwards ease-in;
+
+}
+.box2 {
+  width: 50px;;
+  height: 50px;;
+  background: rgb(74, 74, 192);
+  position: absolute;
+  left: 0;
+  top:20px;
+  animation: moveRight 2s forwards ease-in;
+
+}
+.box3 {
+  width: 150px;
+  height: 150px;
+  background: rgb(113, 192, 74);
+  position: absolute;
+  left: 0;
+  bottom:20px;
+  animation: moveRight 2s forwards ease-in;
+  
+}
+
+@keyframes moveRight {
+  to {
+    transform: translateX(25vw);
+  }
+}

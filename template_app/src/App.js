@@ -1,25 +1,39 @@
-import React, { useState, useEffect } from 'react'
 import './App.css'
+import React, { useEffect, useRef } from 'react'
 
 const App = () => {
-  const [favoriteColor, setFavoriteColor] = useState('green')
 
-  useEffect(() => {
+  function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
 
-    const timerIdentifier = setTimeout(()=>{
-      setFavoriteColor('blue')
-    },1000)
+  const refBox1 = useRef(null)
+ 
+  useEffect(() =>{
+    const intervalID = setInterval(() => {
+      refBox1.current.style.backgroundColor =  getRandomColor()
+    }, 500)
     
-    return () =>  clearTimeout(timerIdentifier);
-  }, [favoriteColor]);
+     const timerID = setTimeout(()=> {
+      
+      refBox1.current.classList.add('circle') 
+     },2500)
 
+    return () => {
+      clearTimeout(timerID)
+      clearInterval(intervalID)
+    }
+  }, [])
 
   return (
-    <>
-    <h1>My favorite color is: {favoriteColor}</h1>
-    <div id="color" className={favoriteColor}/>
-    </>
+  <>
+    <div ref={refBox1} className='box'/>
+  </>
   )
- 
 }
 export default App;

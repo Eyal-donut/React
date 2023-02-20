@@ -1,19 +1,20 @@
 /* Project app specific css */
 #root {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-  }
-  
-  #color.blue {
-    width: 200px;
-    height: 200px;
-    background: blue;
-  }
-  #color.green {
-    width: 200px;
-    height: 200px;
-    background: green;
-  }
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: coral;
+  transition: all ease-in-out 0.25s;
+}
+
+.circle {
+  border-radius: 50px;
+}

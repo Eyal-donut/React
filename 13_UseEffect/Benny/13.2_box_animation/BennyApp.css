@@ -1,0 +1,72 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  background-color: lightseagreen;
+  position: relative;
+
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+
+  font-size: 2rem;
+
+  
+}
+
+.box1 {
+  width: 20vw;
+  height: 20vh;
+  background-color: coral;
+  transition: width 2s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  transform: translateX(-100%);
+  animation: moveRight 2s forwards ease-in;
+}
+
+.box2 {
+  width: 15vw;
+  height: 15vh;
+  background-color: salmon;
+  transition: width 2s ease-in-out;
+  position: absolute;
+  top: 20vh;
+  left: 0;
+  display: block;
+  transform: translateX(-100%);
+  animation: moveRight 2s forwards ease-in;
+}
+
+.box3 {
+  width: 10vw;
+  height: 10vh;
+  background-color: lightblue;
+  
+  position: absolute;
+  top: 35vh;
+  left: 0;
+  display: block;
+  transform: translateX(-100%);
+  animation: moveRight 2s forwards ease-in;
+}
+
+.reverse {
+  transform: translateX(100%);
+  animation: moveRight 2s backwards ease-in;
+}
+
+@keyframes moveRight {
+  to {
+    transform: translateX(0);
+  }
+}

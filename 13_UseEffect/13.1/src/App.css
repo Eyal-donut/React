@@ -1,0 +1,19 @@
+/* Project app specific css */
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  #color.blue {
+    width: 200px;
+    height: 200px;
+    background: blue;
+  }
+  #color.green {
+    width: 200px;
+    height: 200px;
+    background: green;
+  }
