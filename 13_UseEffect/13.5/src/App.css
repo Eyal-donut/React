@@ -8,13 +8,12 @@
   width: 100vw;
 }
 
-.box {
-  width: 100px;
-  height: 100px;
-  background: coral;
-  transition: all ease-in-out 0.15s;
+input {
+  width: 170px;
+  height: 30px;
+  border: 2px solid black;
+}
+input.focus {
+  background: rgb(0,255,127,0.3);
 }
 
-.circle {
-  border-radius: 50px;
-}

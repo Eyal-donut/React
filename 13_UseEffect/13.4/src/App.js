@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react'
 import Spinner from './Spinner'
 
 const App = () => {
-  const [hide, setHide] = useState('');
+  const [isDisplay, setDisplay] = useState(true);
   
   useEffect(()=> {
     const timeOutID = setTimeout(()=> {
-      setHide('hide')
+      setDisplay(false)
     },2000)
 
     return (()=> {
@@ -17,7 +17,7 @@ const App = () => {
 
   return (
   <>
-    <Spinner className={'spinner'+ hide}/>
+    {isDisplay && <Spinner/>}
   </>
   )
 }

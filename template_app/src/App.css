@@ -1,6 +1,7 @@
 /* Project app specific css */
 #root {
   position: relative;
+  flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,22 +9,3 @@
   width: 100vw;
 }
 
-.spinner {
-  width: 100px;
-  height:100px;
-  margin:20px;
-  border: 3px solid #f4f4f4;
-  border-top: 4px solid goldenrod;
-  border-radius:50%;
-  animation: spin 1s linear infinite;
-  visibility: visible;
-}
-
-.hide {
-  visibility: hidden;
-}
-
-@keyframes spin {
-  0% {transform: rotate(0deg);}
-  100% {transform:rotate(360deg);}
-}
