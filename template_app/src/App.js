@@ -1,25 +1,48 @@
 import "./App.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./pages/Home";
-import ProductsPage from "./pages/Products";
-import Root from "./pages/Root";
-import Product from "./pages/Product";
-import ErrorPage from "./pages/ErrorPage";
-
-const router = createBrowserRouter([
-  {
-    path: "/" ,
-    element: <Root />,
-    errorElement: <ErrorPage/>, 
-    children: [
-      { path: "", element: <HomePage /> },
-      { path: "products", element: <ProductsPage /> },
-      { path: "products/:productID", element: <Product/> },
-    ],
-  },
-]);
+import Form from "./Form";
+import React, {useState, useEffect, useRef} from "react";
+import { getItemFromLocalStorage, setItemToLocalStorage } from "./ManageLocalStorage";
+import ListItem from "./ListItem";
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  const [currentTodo, setCurrentTodo] = useState('')
+  const [todoArray, setTodoArray] = useState([])
+
+//add save classlist to local storage so you know if it was marked as done or not
+
+  const formSubmitHandler = (todoValue) => {
+    if (todoValue.length > 0) {
+    setItemToLocalStorage(todoValue, {value: todoValue})
+    setCurrentTodo(todoValue)
+    }
+  }
+
+  useEffect(()=> {
+    for (let i = 0; i < localStorage.length; i++){
+      const todoItem = getItemFromLocalStorage(localStorage.key(i))
+      console.log(todoItem)
+      setTodoArray((prevArray)=> [...prevArray, todoItem])
+    }
+  },[])
+  console.log(todoArray, 'line 25')
+
+  return (
+    <>
+      <Form onFormSubmit={formSubmitHandler}/>
+      <ul>
+        {todoArray.map((todo) => 
+        <ListItem 
+        key={Math.random()}
+        todo= {todo}
+        >
+        </ListItem>)}
+        {currentTodo !== '' && <ListItem
+        key={Math.random()}
+        todo= {currentTodo}
+        >
+        </ListItem>}
+      </ul>
+    </>
+  )
 };
 export default App;
