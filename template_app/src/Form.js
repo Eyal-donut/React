@@ -8,7 +8,6 @@ const Form = ({ onFormSubmit }) => {
 
   const inputHandler = (e) => {
     setTodoText(e.target.value);
-    // inputRef.current = e.target.value
   };
 
   const submitHandler = (e) => {
@@ -16,7 +15,8 @@ const Form = ({ onFormSubmit }) => {
     const inputItem = {
       value: todoText,
       isDone: false,
-      id: new Date(),
+      id: (new Date()).getTime(),
+      deleted: false
     };
     onFormSubmit(inputItem);
     setTodoText("")

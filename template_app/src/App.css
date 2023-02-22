@@ -43,7 +43,7 @@ li {
   height:12px;
   background: url(./assets/x.png) no-repeat center center/cover ;
 }
-.done {
+.not-done.done {
   width: 12px;
   height:12px;
   background: url(./assets/v.png) no-repeat center center/cover ;

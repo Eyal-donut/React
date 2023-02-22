@@ -16,15 +16,14 @@ const App = () => {
   useEffect(() => {
     const localStorageTodoArray = localStorage.getItem("localStorageTodoArray");
     if (localStorageTodoArray) {
-      setTodoArray(JSON.parse(localStorageTodoArray));
+      setTodoArray((JSON.parse(localStorageTodoArray)).filter((todo)=> todo.deleted !== true));
     }
   }, []);
 
   useEffect(() => {
-   if(todoArray.length > 0) {
+   if(todoArray.length > 0){
      localStorage.setItem("localStorageTodoArray", JSON.stringify(todoArray));
    }
-   return 
   }, [todoArray]);
 
 
@@ -37,7 +36,7 @@ const App = () => {
   const statusHandler = (arg, todoItemClassList) => {
     todoItemClassList.toggle("done");
     const identifier = arg.getAttribute("identifier");
-    const clickedTodo = todoArray.find((todo)=> todo.id === identifier)
+    const clickedTodo = todoArray.find((todo)=> String(todo.id) === identifier)
     clickedTodo.isDone = !clickedTodo.isDone
     setTodoArray((todoArray)=> [...todoArray])
   };
@@ -46,7 +45,10 @@ const App = () => {
   const deleteItemsHandler = (arg, todoItemClassList) => {
     todoItemClassList.add("delete");
     const identifier = arg.getAttribute("identifier");
-    setTodoArray((todoArray)=> todoArray.filter((todo)=> todo.id !== identifier))
+    const deleted = todoArray.find((todo)=> String(todo.id) === identifier)
+    deleted.deleted = !deleted.deleted
+    localStorage.setItem("localStorageTodoArray", JSON.stringify(todoArray))
+    setTodoArray((todoArray)=> todoArray.filter((todo)=> String(todo.id) !== identifier))
   };
 
   return (
@@ -60,7 +62,6 @@ const App = () => {
               todo={todoItem.value}
               onStatusClick={statusHandler}
               identifier={todoItem.id}
-              isDone={todoItem.isDone}
               statusclass={
                 todoItem.isDone === false ? "not-done" : "not-done done"
               }
