@@ -10,22 +10,17 @@ import {
 import ListItem from "./ListItem";
 
 const App = () => {
-  const [todoArray, setTodoArray] = useState([]);
-
-
-  useEffect(() => {
+  const [todoArray, setTodoArray] = useState(() => {
     const localStorageTodoArray = localStorage.getItem("localStorageTodoArray");
     if (localStorageTodoArray) {
-      setTodoArray((JSON.parse(localStorageTodoArray)).filter((todo)=> todo.deleted !== true));
-    }
-  }, []);
+      return JSON.parse(localStorageTodoArray)
+
+    } else return []
+  });
 
   useEffect(() => {
-   if(todoArray.length > 0){
-     localStorage.setItem("localStorageTodoArray", JSON.stringify(todoArray));
-   }
+      localStorage.setItem("localStorageTodoArray", JSON.stringify(todoArray));
   }, [todoArray]);
-
 
   const formSubmitHandler = (arg) => {
     if (arg.value.length > 0) {
@@ -36,19 +31,22 @@ const App = () => {
   const statusHandler = (arg, todoItemClassList) => {
     todoItemClassList.toggle("done");
     const identifier = arg.getAttribute("identifier");
-    const clickedTodo = todoArray.find((todo)=> String(todo.id) === identifier)
-    clickedTodo.isDone = !clickedTodo.isDone
-    setTodoArray((todoArray)=> [...todoArray])
+    const clickedTodo = todoArray.find(
+      (todo) => String(todo.id) === identifier
+    );
+    clickedTodo.isDone = !clickedTodo.isDone;
+    setTodoArray((todoArray) => [...todoArray]);
   };
-  
-  
+
   const deleteItemsHandler = (arg, todoItemClassList) => {
     todoItemClassList.add("delete");
     const identifier = arg.getAttribute("identifier");
-    const deleted = todoArray.find((todo)=> String(todo.id) === identifier)
-    deleted.deleted = !deleted.deleted
-    localStorage.setItem("localStorageTodoArray", JSON.stringify(todoArray))
-    setTodoArray((todoArray)=> todoArray.filter((todo)=> String(todo.id) !== identifier))
+    const deleted = todoArray.find((todo) => String(todo.id) === identifier);
+    deleted.deleted = !deleted.deleted;
+    localStorage.setItem("localStorageTodoArray", JSON.stringify(todoArray));
+    setTodoArray((todoArray) =>
+      todoArray.filter((todo) => String(todo.id) !== identifier)
+    );
   };
 
   return (
