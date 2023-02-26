@@ -1,13 +1,14 @@
 import classes from "./Form.module.css";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef ,useState, useEffect } from "react";
 
 const Form = ({ onFormSubmit }) => {
-  const [todoText, setTodoText] = useState("");
+  const [todoText, setTodoText] = useState("")
 
-  const inputRef = useRef(null);
+   const inputRef = useRef(null);
 
   const inputHandler = (e) => {
     setTodoText(e.target.value);
+    // inputRef.current = e.target.value
   };
 
   const submitHandler = (e) => {
@@ -15,11 +16,10 @@ const Form = ({ onFormSubmit }) => {
     const inputItem = {
       value: todoText,
       isDone: false,
-      id: new Date().getTime(),
-      deleted: false,
+      id: Math.random(),
     };
     onFormSubmit(inputItem);
-    setTodoText("");
+    setTodoText("")
   };
 
   useEffect(() => {

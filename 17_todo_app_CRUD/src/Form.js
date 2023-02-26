@@ -16,7 +16,7 @@ const Form = ({ onFormSubmit }) => {
     const inputItem = {
       value: todoText,
       isDone: false,
-      id: new Date(),
+      id: Math.random(),
     };
     onFormSubmit(inputItem);
     setTodoText("")
