@@ -1,0 +1,51 @@
+/* Project app specific css */
+#root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+main {
+  margin: 20px auto;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+a,
+a:visited{
+  color: inherit;
+}
+
+li {
+  margin: 10px;
+}
+
+.todo-wrapper{
+  width: 300px;
+  height:60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todo-wrapper.delete{
+  display: none;
+}
+
+.not-done {
+  width: 12px;
+  height:12px;
+  background: url(./assets/x.png) no-repeat center center/cover ;
+}
+.done {
+  width: 12px;
+  height:12px;
+  background: url(./assets/v.png) no-repeat center center/cover ;
+}
+
