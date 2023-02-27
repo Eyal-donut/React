@@ -37,8 +37,11 @@ button.false {
 
 ul {
   list-style: none;
+  display: flex;
 }
 li {
   display: flex;
+  flex-direction: column;
 }
+
 
