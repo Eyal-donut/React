@@ -12,31 +12,31 @@ class App extends Component {
     };
   }
   handleClick(e) {
-    console.log(e.target.parentElement.className)
+    console.log(e.target.parentElement.className);
     switch (e.target.parentElement.className) {
       case "css":
         this.setState((prevState) => {
-          return {css: !prevState.css };
+          return { css: !prevState.css };
         });
-        break
+        break;
       case "javaScript":
         this.setState((prevState) => {
-          return {javascript: !prevState.javascript };
+          return { javascript: !prevState.javascript };
         });
-        break
+        break;
       case "learn-react":
         this.setState((prevState) => {
-          return {learnReact: !prevState.learnReact };
+          return { learnReact: !prevState.learnReact };
         });
-        break
+        break;
       case "learn-mongo-db":
         this.setState((prevState) => {
-          return {learnMongoDB: !prevState.learnMongoDB };
+          return { learnMongoDB: !prevState.learnMongoDB };
         });
-        break
+        break;
       default:
         this.setState((prevState) => {
-          return {learnNodeJS: !prevState.learnNodeJS };
+          return { learnNodeJS: !prevState.learnNodeJS };
         });
     }
   }
