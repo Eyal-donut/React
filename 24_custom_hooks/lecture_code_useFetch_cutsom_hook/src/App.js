@@ -1,4 +1,5 @@
-import useFetch from "./custom hooks/useFetch";
+import "./styles.css";
+import useFetch from "./hooks/useFetch";
 
 export default function App() {
   const BASE_URL = "https://inshortsapi.vercel.app/news?category=all";
@@ -10,7 +11,6 @@ export default function App() {
       {error && <h3>Error: something went wrong </h3>}
       <div>
         <pre>{JSON.stringify(data, undefined, 2)}</pre>
-        <button></button>
       </div>
     </div>
   );
