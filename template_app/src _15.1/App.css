@@ -1,0 +1,26 @@
+/* Project app specific css */
+#root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+main {
+  margin: 20px auto;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+a,
+a:visited{
+  color: inherit;
+}
+
